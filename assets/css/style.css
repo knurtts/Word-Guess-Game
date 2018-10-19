@@ -21,4 +21,13 @@
  p {
      color: white;
      font-family: 'Fjalla One', sans-serif;
+     font-size: 300%;
+ }
+
+ #begin {
+     font-size: 150%;
+ }
+
+ #souls-boss {
+     height: 10rem;
  }

@@ -10,6 +10,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body background="assets/images/background.jpg">
@@ -21,27 +22,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 anyKey">
-                <p>~ Press any key to begin ~</p>
+                <p id="begin">~ Press any key to begin ~</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9">
-                <p id="soulsBoss"></p>
+            <div class="col-md-12">
+                <p id="souls-boss"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <p id="usedLetters">Letters Used</p>
-            </div>
-            <div class="col-md-4">
-                <p id="remainingGuess">Guesses Left</p>
+                <p>Letters Used:</p>
+                <p id="usedLetters"></p>
             </div>
             <div class="col-md-4">
                 <div class="row">
-                    <p id="winsText">Wins:</p>
+                    <p>Guesses Left:</p>
+                <p id="remainingGuess"></p>
                 </div>
                 <div class="row">
-                    <p id="lossText">Losses:</p>
+                    <div class="imagePlaceholder"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <p id="wins-text">Wins: 0</p>
+                </div>
+                <div class="row">
+                    <p id="loss-text">Losses: 0</p>
                 </div>
             </div>
         </div>
