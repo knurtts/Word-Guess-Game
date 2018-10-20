@@ -18,7 +18,6 @@ var game = {
         var underscore = "";
         this.guessedLetters = [];
         this.guesses = 20;
-        var soulsBoss = document.getElementById("souls-boss");
         this.bossName = this.bosses[Math.floor(Math.random() * 12)];
         var letter = game.guesses.toString();
 
@@ -36,7 +35,7 @@ var game = {
 
         console.log(this.bossName);
 
-        var bossChar = this.bossName.split('');
+        var bossChar = this.bossName.split(", ");
         console.log(bossChar);
 
         var lineArray = underscore.split(' ');
@@ -52,7 +51,7 @@ var game = {
             };
             if (keyGuess != game.guessedLetters[i]) {
                 game.guessedLetters.push(keyGuess);
-                console.log(game.guessedLetters);
+                //console.log(game.guessedLetters);
                 document.getElementById("usedLetters").textContent = game.guessedLetters;
             }
 
@@ -68,8 +67,9 @@ var game = {
                 document.getElementById("loss-text").innerHTML = "Losses: " + loser;
                 game.restart();
             }
-
-            if (bossChar + "" == lineArray) {
+            console.log(bossChar);
+            console.log(lineArray);
+            if (bossChar == underscore) {
                 alert("VICTORY")
                 
             }
