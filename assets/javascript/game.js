@@ -5,52 +5,66 @@ var game = {
     guessedLetters: [],
     bossName: "",
     gameStart: false,
-    bosses: ["quelaag", "artorias", "manus", "nito", "gwyn", "seath", "priscilla", "smough", "ornstein", "gwyndolin", "sif", "pinwheel",],
+    bosses: ["quelaag", "artorias", "manus", "nito", "gwyn", "seath", "priscilla", "smough", "ornstein", "gwyndolin", "sif", "pinwheel", ],
 
-    
-    badGuess: function() {
+
+    badGuess: function () {
         this.guesses = this.guesses - 1;
         this.guessedLetters = key.push(guessedLetters);
     },
 
-    start: function() {
+    initialize: function () {
         this.gameStart = true;
-        var underscore = ".";
+        var underscore = "";
         var soulsBoss = document.getElementById("souls-boss");
         this.bossName = this.bosses[Math.floor(Math.random() * 12)];
         for (i = 0; i < this.bossName.length; i++) {
-            //var wordLength = "_ ";
-            underscore += " _ ";
-            //underscore.textContent = wordLength;
-            //revisit this. pressing enter multiple times just adds on to end of word
-       }
-       console.log(underscore);
-       document.querySelector("#souls-boss").innerHTML = underscore;
-       
+            underscore += "_ ";
+        }
+
+        //setTimeout is a placeholder to make this method work for now.
+        setTimeout(() => {
+            document.querySelector("#souls-boss").innerHTML = underscore;
+        }, 1);
+
+        console.log(this.bossName);
+
+        var bossChar = this.bossName.split('');
+        console.log(bossChar);
+
+        var lineArray = underscore.split(' ');
+        console.log(lineArray);
+
+        document.onkeyup = function (event) {
+            var keyGuess = event.key;
+            for (i = 0; i < bossChar.length; i++) {
+                if (keyGuess === bossChar[i]) {
+                    lineArray[i] = keyGuess;
+                    document.querySelector("#souls-boss").innerHTML = lineArray.join(' ');
+                } else {
+                    this.guesses--;
+                    document.querySelector("#usedLetters").innerHTML = appendChild.keyGuess;
+                }
+            }
+
+        }
     },
 
 
+    /*
+        invalidKey: function(keyGuess) {
+            this.guesses--;
+            var bossChar = this.bossName.split(', ');
+            console.log(bossChar);
+            document.getElementById("remainingGuess").textContent = this.guesses;
+            var badLetter = document.getElementById("usedLetters");
+            badLetter.textContent = keyGuess;
+        },*/
+
 };
 
-document.onload = game.start();
+document.onkeyup = function (event) {
 
-    document.onkeyup = function(event) {
-        var keyGuess = event.keyCode;
-        var keySearch = game.bossName.includes(keyGuess);
-        if (keySearch) {
-            alert("Good guess!");
+    game.initialize();
 
-        } else {
-            alert("Bad guess!");
-            game.guesses--;
-        }
-        //if (keyGuess === 13) {
-          //  game.start();
-        //}
-    }
-
-
-
-
-
-
+};
