@@ -11,34 +11,35 @@
     flex-direction: column-reverse;
     padding-bottom: 2%;
 }
- .anyKey {
+
+.anyKey {
     font-family: 'Fjalla One', sans-serif;
     color: white;
     display: flex;
     justify-content: flex-end;
- }
+}
 
- p {
-     color: white;
-     font-family: 'Fjalla One', sans-serif;
-     font-size: 300%;
- }
+p {
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 300%;
+}
 
- #begin {
-     font-size: 140%;
- }
+#begin {
+    font-size: 140%;
+}
 
- #souls-boss {
-     height: 10rem;
- }
+#souls-boss {
+    height: 10rem;
+}
 
- /*Attempted to hide scrollbar*/
- ::-webkit-scrollbar{
- width: 0px;
- }
+/*Attempted to hide scrollbar*/
+::-webkit-scrollbar {
+    width: 0px;
+}
 
 ::-webkit-scrollbar-track-piece {
- background-color: transparent;
- -webkit-border-radius: 6px;
- border-radius: 0px;
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+    border-radius: 0px;
 }

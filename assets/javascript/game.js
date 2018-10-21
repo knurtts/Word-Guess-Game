@@ -36,15 +36,16 @@ var game = {
         //console.log(this.bossName);
 
         var bossChar = this.bossName.split('');
-          
+
         //console.log(bossChar);
 
         var lineArray = underscore.split(' ');
-        
+
         for (let i = 0; i < lineArray.length; i++) {
             if (i = lineArray.length) {
                 remove(lineArray, i);
             }
+
             function remove(array, element) {
                 var index = array.indexOf(element);
                 array.splice(index, 1);
@@ -63,21 +64,21 @@ var game = {
             };
             if (keyGuess != game.guessedLetters[i]) {
                 game.guessedLetters.push(keyGuess);
-                
-                
+
+
                 document.getElementById("usedLetters").textContent = game.guessedLetters.join(' ');
             };
 
             if (lineArray.includes("_") == false) {
                 setTimeout(() => {
 
-                alert("VICTORY");
-                game.wins++;
-                var winner = game.wins.toString();
-                document.getElementById("wins-text").innerHTML = "Wins: " + winner;
-                //console.log(winner);
-                game.restart();
-            }, 500);
+                    alert("VICTORY");
+                    game.wins++;
+                    var winner = game.wins.toString();
+                    document.getElementById("wins-text").innerHTML = "Wins: " + winner;
+                    //console.log(winner);
+                    game.restart();
+                }, 500);
 
             };
 
@@ -95,7 +96,7 @@ var game = {
                 game.restart();
             };
 
-           
+
         }
 
     },
@@ -117,7 +118,5 @@ var game = {
 document.onkeyup = function (event) {
 
     game.initialize();
-    document.getElementById("background-audio").autoplay;
 
 };
-
