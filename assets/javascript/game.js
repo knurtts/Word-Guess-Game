@@ -35,10 +35,22 @@ var game = {
 
         console.log(this.bossName);
 
-        var bossChar = this.bossName.split(", ");
+        var bossChar = this.bossName.split('');
+          
         console.log(bossChar);
 
         var lineArray = underscore.split(' ');
+        
+        for (let i = 0; i < lineArray.length; i++) {
+            if (i = lineArray.length) {
+                remove(lineArray, i);
+            }
+            function remove(array, element) {
+                var index = array.indexOf(element);
+                array.splice(index, 1);
+            }
+        }
+
         console.log(lineArray);
 
         document.onkeyup = function (event) {
@@ -52,8 +64,26 @@ var game = {
             if (keyGuess != game.guessedLetters[i]) {
                 game.guessedLetters.push(keyGuess);
                 //console.log(game.guessedLetters);
-                document.getElementById("usedLetters").textContent = game.guessedLetters;
-            }
+//START HERE!!!
+                var upperLetters = game.guessedLetters.toUpperCase();
+                console.log(upperLetters);
+                
+                document.getElementById("usedLetters").textContent = upperLetters;
+            };
+
+            if (lineArray.includes("_") == false) {
+                setTimeout(() => {
+
+                alert("VICTORY");
+                game.wins++;
+                var winner = game.wins.toString();
+                document.getElementById("wins-text").innerHTML = "Wins: " + winner;
+                //console.log(winner);
+                game.restart();
+            }, 500);
+
+            };
+
 
             //These lines write the remaining guesses to the page
             game.guesses--;
@@ -66,15 +96,11 @@ var game = {
                 var loser = game.losses.toString();
                 document.getElementById("loss-text").innerHTML = "Losses: " + loser;
                 game.restart();
-            }
-            console.log(bossChar);
-            console.log(lineArray);
-            if (bossChar == underscore) {
-                alert("VICTORY")
-                
-            }
+            };
 
+           
         }
+
     },
 
     restart: function () {
