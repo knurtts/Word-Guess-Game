@@ -33,11 +33,11 @@ var game = {
             document.querySelector("#souls-boss").innerHTML = underscore;
         }, 1);
 
-        console.log(this.bossName);
+        //console.log(this.bossName);
 
         var bossChar = this.bossName.split('');
           
-        console.log(bossChar);
+        //console.log(bossChar);
 
         var lineArray = underscore.split(' ');
         
@@ -51,7 +51,7 @@ var game = {
             }
         }
 
-        console.log(lineArray);
+        //console.log(lineArray);
 
         document.onkeyup = function (event) {
             var keyGuess = event.key;
@@ -63,12 +63,9 @@ var game = {
             };
             if (keyGuess != game.guessedLetters[i]) {
                 game.guessedLetters.push(keyGuess);
-                //console.log(game.guessedLetters);
-//START HERE!!!
-                var upperLetters = game.guessedLetters.toUpperCase();
-                console.log(upperLetters);
                 
-                document.getElementById("usedLetters").textContent = upperLetters;
+                
+                document.getElementById("usedLetters").textContent = game.guessedLetters.join(' ');
             };
 
             if (lineArray.includes("_") == false) {
@@ -115,9 +112,12 @@ var game = {
 
 };
 
+
+
 document.onkeyup = function (event) {
 
     game.initialize();
+    document.getElementById("background-audio").autoplay;
 
 };
 

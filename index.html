@@ -13,7 +13,10 @@
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
-<body background="assets/images/background.jpg">
+<body background="assets/images/Dark-Souls-Wallpaper-High-Resolution.jpg">
+    <audio id="background-audio" controls autoplay="true" src="assets/audio/firelinkShrine.mp3" type="audio/mpeg">
+    <p>Audio is broken.</p>
+    </audio>
     <header class="row">
         <img class="col-md-6" src="assets/images/Dark-Souls-Logo-PNG-Photo.png" alt="Dark Souls Title Logo" class="logo">
         <div class="col-md-6 gameTitle">Guess the Boss!</div>
@@ -21,21 +24,21 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-md-4 anyKey">
+            <div class="col-md-4 anyKey box">
                 <p id="begin">~ Press any key to begin ~</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 box">
                 <p id="souls-boss"></p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 box">
                 <p>Letters Used:</p>
                 <p id="usedLetters"></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 box">
                 <div class="row">
                     <p>Guesses Left:</p>
                 <p id="remainingGuess">20</p>
@@ -44,7 +47,7 @@
                     <div class="imagePlaceholder"></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 box">
                 <div class="row">
                     <p id="wins-text">Wins: 0</p>
                 </div>
